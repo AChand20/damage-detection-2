@@ -11,6 +11,7 @@ run_with_ngrok(app)
 def hello():   
 
     folder = 'static'
+    os.mkdir(folder)
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
         try:
