@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, url_for
+from flask_ngrok import run_with_ngrok
 import os, shutil
 from predictions import pred_price
 import gdown
 
 app = Flask(__name__)
+run_with_ngrok(app) 
 
 @app.route("/")
 def hello():   
