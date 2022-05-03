@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<body>
+    {%if img %}
+    <p>Uploaded Image</p>
+    <img src="{{ url_for('static', filename = img) }}" width="256" height="256">
+
+    <p>Damages Detected</p>
+    {% if pri %}
+    <img src="{{ url_for('static', filename = pre) }}" width="256" height="256">
+
+    
+    <p>Total Repair Cost = ${{pri}}</p>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
