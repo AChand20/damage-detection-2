@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, url_for
 import os, shutil
 from predictions import pred_price
-from download import download_file_from_google_drive
 import gdown
 
 app = Flask(__name__) 
