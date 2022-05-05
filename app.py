@@ -3,7 +3,7 @@ import os, shutil
 from predictions import pred_price
 import gdown
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route("/")
 def hello():   
@@ -56,4 +56,4 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run()
