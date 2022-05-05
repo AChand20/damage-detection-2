@@ -45,6 +45,8 @@ def result():
     output1 = 'models/model_final_1.pth'
     url2 = 'https://drive.google.com/uc?export=download&id=1-HEhFAJzFSveKSLhxdV80IZG96S9bNHT'
     output2 = 'models/model_final_2.pth'
+    if not os.path.exists('models'):
+        os.makedirs('models')
     gdown.download(url1, output1, quiet=False)
     gdown.download(url2, output2, quiet=False)
     print("Models Downloaded")
