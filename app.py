@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for
 import os, shutil
 from predictions import pred_price
+from download import download_file_from_google_drive
 import gdown
 
 app = Flask(__name__) 
@@ -41,12 +42,17 @@ def result():
     img_filename = str(request.args.to_dict(flat=False)['data'][0])
     path = os.path.join('static', img_filename)
     #print(img_filename)
-    url1 = f'https://drive.google.com/uc?export=download&confirm=pbef&id=1-yqDSi6kZ-aOuOJQdhvVdis6W-sIMT10'
+
+    url1 = 'https://drive.google.com/uc?export=download&confirm=pbef&id=1-yqDSi6kZ-aOuOJQdhvVdis6W-sIMT10'
     output1 = 'models/model_final_1.pth'
-    url2 = f'https://drive.google.com/uc?export=download&confirm=pbef&id=1-HEhFAJzFSveKSLhxdV80IZG96S9bNHT'
+    url2 = 'https://drive.google.com/uc?export=download&confirm=pbef&id=1-HEhFAJzFSveKSLhxdV80IZG96S9bNHT'
+    
     output2 = 'models/model_final_2.pth'
     if not os.path.exists('models'):
         os.makedirs('models')
+    
+    #download_file_from_google_drive('1-yqDSi6kZ-aOuOJQdhvVdis6W-sIMT10',output1)
+    #download_file_from_google_drive('1-HEhFAJzFSveKSLhxdV80IZG96S9bNHT',output2)
     gdown.download(url1, output1, quiet=False)
     gdown.download(url2, output2, quiet=False)
     print("Models Downloaded")
