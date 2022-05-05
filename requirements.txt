@@ -10,5 +10,5 @@ scipy
 gunicorn
 Flask
 Jinja2
-opencv-python-headless
+opencv-python
 gdown
