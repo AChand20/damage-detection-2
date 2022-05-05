@@ -11,3 +11,4 @@ gunicorn
 Flask
 Jinja2
 opencv-python
+gdown
