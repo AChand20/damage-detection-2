@@ -1,0 +1,9 @@
+scikit-image
+numpy
+pandas
+scipy
+gunicorn
+Flask
+Jinja2
+opencv-python
+gdown
