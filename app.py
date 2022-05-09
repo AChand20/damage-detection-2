@@ -52,8 +52,10 @@ def result():
     
     #download_file_from_google_drive('1-yqDSi6kZ-aOuOJQdhvVdis6W-sIMT10',output1)
     #download_file_from_google_drive('1-HEhFAJzFSveKSLhxdV80IZG96S9bNHT',output2)
-    gdown.download(url1, output1, quiet=False)
-    gdown.download(url2, output2, quiet=False)
+    if not os.path.exists(output1):
+        gdown.download(url1, output1, quiet=False)
+    if not os.path.exists(output2):
+        gdown.download(url2, output2, quiet=False)
     print("Models Downloaded")
     print("Making Predictions")
     # This is where your time-consuming stuff can take place (sql queries, checking other apis, etc)
