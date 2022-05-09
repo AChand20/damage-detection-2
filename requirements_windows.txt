@@ -1,3 +1,7 @@
+fvcore
+cloudpickle
+omegaconf
+pycocotools-windows
 scikit-image
 numpy
 pandas
